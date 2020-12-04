@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <script src="main.js"></script>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Web UNO</title>
+  </head>
+  <body id="body" onload="ready()">
+    <div id="dirIndic"></div>
+    <div id="topbar">
+      <div id="otherplayers">
+        <!--<div class="player">
+          <p class="playerusername">Username</p>
+          <p class="playercardsnumber">10</p>
+          <div class="playercards"></div>
+        </div>
+        <div class="player">
+          <p class="playerusername">Username</p>
+          <p class="playercardsnumber">5</p>
+          <div class="playercards"></div>
+        </div>-->
+      </div>
+    </div>
+    <div id="arena"></div>
+    <div id="hand">
+
+    </div>
+    <div id="menupanel">
+      <div class="panel" id="createpanel"></div>
+      <div class="panel" id="joinpanel">
+        <h2>Game code:</h2>
+        <input id="entertoken" type="text" maxlength="6" placeholder="XXXXXX">
+        <p>url?g=xxxxxx</p>
+        <div id="menuJoinBtn" onclick="menuJoin()" class="button">Join</div>
+      </div>
+      <div class="panel" id="joiningpanel"><h2>Joining...</h2></div>
+      <div class="panel" id="modepanel">
+        <h2><div id="joinBtn" onclick="toJoin()" class="button">Join</div>&nbsp;&nbsp;Or&nbsp;&nbsp;<div id="hostBtn" onclick="host()" class="button">Create</div></h2>
+      </div>
+      <div class="panel" id="startpanel">
+        <h2>Welcome to Web UNO</h2>
+        <input id="entername" onchange="enterName()" maxlength="10" type="text" placeholder="Enter name." title="Enter your name.">
+        <div id="playBtn" onclick="enterName()" class="button">Play</div>
+        <p class="smalltext">Version 1.1</p>
+      </div>
+      <div class="panel" id="lobbypanel">
+        <h2 id="lobbyname">Lobby</h2>
+        <input id="sharelink" disabled>
+        <p style="margin-bottom:4px;">Rules: </p>
+        <div id="rulecontainer">
+          <div id="rulequicktimeuno" class="rulebtn" onclick="setRule('quicktimeuno')" title="UNO Quick Time"></div>
+          <div id="rulestacking" class="rulebtn" onclick="setRule('stacking')" title="Plus Stacking"></div>
+          <div id="ruleforceplay" class="rulebtn" onclick="setRule('forceplay')" title="Force Play"></div>
+          <div id="rulejumpin" class="rulebtn" onclick="setRule('jumpin')" title="Jump-in"></div>
+          <div id="ruleendonwild" class="rulebtn" onclick="setRule('endonwild')" title="End On Wild"></div>
+          <div id="rulestartcards" off val="7" class="rulebtn" onclick="setRuleStartCards()" title="Number Of Start Cards"></div>
+          <div id="ruleturntimer" class="rulebtn" onclick="setRule('turntimer')" title="Turn Timer"></div>
+          <div id="rulespecialcards" class="rulebtn" onclick="setRule('specialcards')" title="Special Cards"></div>
+          <div id="ruleplaystack" class="rulebtn" onclick="setRule('playstack')" title="Play Stack"></div>
+        </div>
+        <div id="startgame" onclick="startGame()" class="button">Start</div>
+      </div>
+      <div class="panel" id="gameendpanel">
+        <h2 id="winnername">Winner</h2>
+        <p id="gamestats"></p>
+        <div id="backtolobby" onclick="showLobby()" class="button">Lobby</div>
+      </div>
+    </div>
+    <div id="stackdisplay" hide>+4</div>
+    <div id="ui"></div>
+    <div id="frontmessage">
+      <div id="frontmessagebar"></div>
+      <p id="frontmessagetext"></p>
+    </div>
+    <div hide id="skipflash"></div>
+    <div hide id="clickedfirst">UNO!</div>
+    <div hide id="colorSelector">
+      <div id="cSelRed" onclick="selectCol(1)"></div>
+      <div id="cSelGreen" onclick="selectCol(2)"></div>
+      <div id="cSelBlue" onclick="selectCol(3)"></div>
+      <div id="cSelYellow" onclick="selectCol(4)"></div>
+    </div>
+    <div hide id="calluno" onclick="clickUno()">
+      <p>UNO</p>
+    </div>
+    <p id="copyright">© Hugo Lindell 2018</p>
+    <div id="timeleft"></div>
+  </body>
+</html>
